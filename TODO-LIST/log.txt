@@ -2,3 +2,21 @@
 11/4/2021 0:26:34 -> Segundo Log
 11/4/2021 0:26:34 -> Terceiro Log
 11/4/2021 0:27:6 -> Primeiro Log
+Sun Apr 11 2021 21:38:08 GMT-0300 (heure normale de Brasilia) -> Primeiro Log
+11/04/2021 21:44:34 -> Primeiro Log
+11/04/2021 21:54:43 -> Primeiro Log
+11/04/2021 21:55:04 -> Primeiro Log
+11/04/2021 21:55:11 -> Primeiro Log
+11/04/2021 21:55:14 -> Primeiro Log
+11/04/2021 21:55:15 -> Primeiro Log
+11/04/2021 21:55:16 -> Primeiro Log
+11/04/2021 21:55:18 -> Primeiro Log
+11/04/2021 21:55:19 -> Primeiro Log
+11/04/2021 21:55:21 -> Primeiro Log
+11/04/2021 21:55:24 -> Primeiro Log
+11/04/2021 21:55:31 -> Primeiro Log
+11/04/2021 21:55:38 -> Primeiro Log
+11/04/2021 21:55:39 -> Primeiro Log
+11/04/2021 21:55:46 -> Primeiro Log
+11/04/2021 21:55:56 -> Primeiro Log
+11/04/2021 21:56:02 -> Primeiro Log
