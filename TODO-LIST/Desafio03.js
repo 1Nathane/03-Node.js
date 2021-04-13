@@ -11,4 +11,3 @@ const funcaoImprimirLog = require("./Desafio03_modulo");
 funcaoImprimirLog('Primeiro Log')
 
 
-

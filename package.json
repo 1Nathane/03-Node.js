@@ -2,7 +2,7 @@
   "name": "03-node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "teste.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/1Nathane/03-Node.js#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
     "lodash": "^4.17.21"
   }
 }

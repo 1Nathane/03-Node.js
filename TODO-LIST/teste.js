@@ -1,4 +1,6 @@
 const _ = require('lodash')
+const chalk = require('chalk')
+
 
 const meuArrey = [1, 5 , 7, 13, 5, 11]
 
@@ -14,3 +16,5 @@ console.log(diferenca)
 const onde = _.indexOf(meuArrey, 13)
 
 console.log(onde)
+
+console.log(chalk.white.bold.bgGreen('Mensagem verde'))
