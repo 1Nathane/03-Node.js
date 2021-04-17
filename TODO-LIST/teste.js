@@ -17,4 +17,4 @@ const onde = _.indexOf(meuArrey, 13)
 
 console.log(onde)
 
-console.log(chalk.white.bold.bgGreen('Mensagem verde'))
+console.log(chalk.yellow.bold.bgGreen('Mensagem verde'))
