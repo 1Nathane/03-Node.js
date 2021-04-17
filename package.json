@@ -18,6 +18,7 @@
   "homepage": "https://github.com/1Nathane/03-Node.js#readme",
   "dependencies": {
     "chalk": "^4.1.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "yargs": "^16.2.0"
   }
 }

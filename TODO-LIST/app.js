@@ -10,7 +10,61 @@
 
 // console.log('Resultado:',teste)
 
-const _ = require('lodash')
+// const _ = require('lodash')
 const chalk = require('chalk')
+const yargs = require('yargs')
 
-console.log('hello')
+// console.log(process.argv)
+
+// const command = process.argv[3]
+
+// if(process.argv[2] === 'Nathane'){
+//     console.log(chalk.blue('Meu nome é:'))
+// }
+// else{
+//     console.log(chalk.red('Esse não é meu nome! \nMeu nome é:'))
+// }
+
+// console.log(chalk.black.bgGreen('Nathane'))
+
+//alterando a versão do CLI
+yargs.version('2.0.0')
+
+// add -> adicionar uma nova task
+// remove -> remover a task
+// list -> listar todas as tasks
+// read -> ler uma task
+
+yargs.command({
+    command: 'add',
+    describe: 'Add a new task into the TODO LIST',
+    handler: function (){
+        console.log(chalk.green('CREATING A NEW TASK'))
+    }
+})
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a task from the TODO LIST',
+    handler: function (){
+        console.log(chalk.red('REMOVING A TASK'))
+    }
+})
+yargs.command({
+    command: 'list',
+    describe: 'List all tasks from the TODO LIST',
+    handler: function (){
+        console.log(chalk.white('LISTING ALL PROJECT\'S TASK'))
+    }
+})
+yargs.command({
+    command: 'read',
+    describe: 'Read a task from the TODO LIST',
+    handler: function (){
+        console.log(chalk.blue('READING A TASK'))
+    }
+})
+
+// console.log(process.argv)
+console.log(yargs.argv)
+
+
