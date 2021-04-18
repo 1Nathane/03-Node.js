@@ -90,8 +90,9 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Read a task from the TODO LIST',
-    handler: function (){
+    handler: function (argv){
         console.log(chalk.blue('READING A TASK'))
+        task.readTasks(argv.name)
     }
 })
 

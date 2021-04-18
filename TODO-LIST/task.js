@@ -30,24 +30,13 @@ const addTask = function(name, description, status){
 const removeTask = function(name){
     const tasks = loadAllTasks()
 
-    var indiceParaRemover = null
+    indiceParaRemover = findATask(name)
 
-    for(var i = 0; i < _.size(tasks); i++){
-        try {
-            if(name === tasks[i].name){   
-                indiceParaRemover = i
-            }   
-        } catch (error) {
-            const errorMenssage = chalk.red.bold('Erro: Não existe task com esse nome!')
-            console.log(errorMenssage)
-            
-        }      
-    }
     if(indiceParaRemover != null){                      
         _.pullAt(tasks, indiceParaRemover)
         fs.writeFileSync('tasks.json',JSON.stringify(tasks))
         
-        const sucessMessage = chalk.green.bold('Task excluida!')
+        const sucessMessage = chalk.red.bold('Task excluida!')
         console.log(sucessMessage)
     } else{
         const errorMenssage = chalk.red.bold('Não existe task com esse nome!')
@@ -61,6 +50,18 @@ const listTasks = function(){
     for(var i = 0; i < _.size(tasks); i++){
         console.log(chalk.yellow(tasks[i].name))
     }
+}
+
+const readTasks = function(name){
+    const tasks = loadAllTasks()
+    const taskindice = findATask(name)
+    if(taskindice != null){
+        console.log(chalk.blue.bold(`Nome: ${tasks[taskindice].name}\nDescrição: ${tasks[taskindice].description}\nStatus: ${tasks[taskindice].status}`))
+    }else{
+        const errorMessage = chalk.blue.bold('Não existe task com esse nome!')
+        console.log(errorMessage)
+    }
+    
 }
 
 const saveTask = function(task){
@@ -78,9 +79,26 @@ const loadAllTasks = function(){
     }
 }
 
+const findATask = function(name){
+    const tasks = loadAllTasks()
+    for(var i = 0; i < _.size(tasks); i++){
+        try {
+            if(name === tasks[i].name){   
+                return i
+            }   
+        } catch (error) {
+            const errorMenssage = chalk.red.bold('Erro: Não existe task com esse nome!')
+            console.log(errorMenssage)
+            return null
+            
+        }      
+    }
+}
+
 
 module.exports = {
     addTask,
     removeTask,
-    listTasks
+    listTasks,
+    readTasks
 }
