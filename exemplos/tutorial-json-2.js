@@ -56,6 +56,5 @@ carroJSONdeVoltaEObjeto.cor = 'Vermelho'
 fs.writeFileSync('carro.json', JSON.stringify(carroJSONdeVoltaEObjeto))
 
 // validar o arquivo carro.json
-
 console.log(carroJSONdeVoltaEObjeto)
 
