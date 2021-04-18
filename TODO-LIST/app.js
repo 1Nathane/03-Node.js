@@ -1,47 +1,48 @@
 // const funcaoTesteIncremento = require('./modulo')
-// //const sobrenome = require('./modulo');
+// const sobrenome = require('./modulo');
 
 // const nome = 'Nathane'
 
-// //console.log('Estou em -> app.js')
-// //console.log(nome, sobrenome);
+// console.log('Estou em -> app.js')
+// console.log(nome, sobrenome);
 
 // const teste = funcaoTesteIncremento(10, 2)
 
 // console.log('Resultado:',teste)
-
-// const _ = require('lodash')
-const chalk = require('chalk')
-const { castArray } = require('lodash')
-const { demandOption } = require('yargs')
-const yargs = require('yargs')
 
 // console.log(process.argv)
 
 // const command = process.argv[3]
 
 // if(process.argv[2] === 'Nathane'){
-//     console.log(chalk.blue('Meu nome é:'))
-// }
-// else{
-//     console.log(chalk.red('Esse não é meu nome! \nMeu nome é:'))
-// }
+    //     console.log(chalk.blue('Meu nome é:'))
+    // }
+    // else{
+        //     console.log(chalk.red('Esse não é meu nome! \nMeu nome é:'))
+        // }
+        
+    // console.log(chalk.black.bgGreen('Nathane'))
+        
+    //alterando a versão do CLI
+    // yargs.version('2.0.0')
+        
+     // add -> adicionar uma nova task
+    // remove -> remover a task
+    // list -> listar todas as tasks
+    // read -> ler uma task
+        
+     
+    // adicionar no builder description e status
+    //descrição do novo campo
+    //adicionar o tipo
+    //imprimir no console.log
+        
+    // const _ = require('lodash')
+const chalk = require('chalk')
+const { castArray } = require('lodash')
+const { demandOption } = require('yargs')
+const yargs = require('yargs')
 
-// console.log(chalk.black.bgGreen('Nathane'))
-
-//alterando a versão do CLI
-yargs.version('2.0.0')
-
-// add -> adicionar uma nova task
-// remove -> remover a task
-// list -> listar todas as tasks
-// read -> ler uma task
-
-
-// adicionar no builder description e status
-//descrição do novo campo
-//adicionar o tipo
-//imprimir no console.log
 
 yargs.command({
     command: 'add',
@@ -65,7 +66,6 @@ yargs.command({
     },
     handler: function (argv){
         console.log(chalk.green('CREATING A NEW TASK'));
-        console.log('info')
         console.log(argv.name)
         console.log(argv.descricao)
         console.log(argv.status)
