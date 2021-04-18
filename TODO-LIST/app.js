@@ -39,9 +39,8 @@
         
     // const _ = require('lodash')
 const chalk = require('chalk')
-const { castArray } = require('lodash')
-const { demandOption } = require('yargs')
 const yargs = require('yargs')
+const task = require('./task')
 
 
 yargs.command({
@@ -66,16 +65,18 @@ yargs.command({
     },
     handler: function (argv){
         console.log(chalk.green('CREATING A NEW TASK'));
-        console.log(argv.name)
-        console.log(argv.descricao)
-        console.log(argv.status)
+        task.addTask(argv.name, argv.descricao,argv.status)
+        // console.log(argv.name)
+        // console.log(argv.descricao)
+        // console.log(argv.status)
     }
 })
 yargs.command({
     command: 'remove',
     describe: 'Remove a task from the TODO LIST',
-    handler: function (){
-        console.log(chalk.red('REMOVING A TASK'))
+    handler: function (argv){
+        console.log(chalk.red('REMOVING A TASK'));
+        task.removeTask(argv.name)
     }
 })
 yargs.command({
@@ -83,6 +84,7 @@ yargs.command({
     describe: 'List all tasks from the TODO LIST',
     handler: function (){
         console.log(chalk.yellow('LISTING OUT ALL PROJECT\'S TASK'))
+        task.listTasks()
     }
 })
 yargs.command({
