@@ -63,7 +63,7 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function (argv){
+    handler: (argv) => {
         console.log(chalk.green('CREATING A NEW TASK'));
         task.addTask(argv.name, argv.descricao,argv.status)
         // console.log(argv.name)
@@ -74,7 +74,14 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a task from the TODO LIST',
-    handler: function (argv){
+    builder: {
+        name:{
+            describe: 'Task name',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) => {
         console.log(chalk.red('REMOVING A TASK'));
         task.removeTask(argv.name)
     }
@@ -82,7 +89,7 @@ yargs.command({
 yargs.command({
     command: 'list',
     describe: 'List all tasks from the TODO LIST',
-    handler: function (){
+    handler: () => {
         console.log(chalk.yellow('LISTING OUT ALL PROJECT\'S TASK'))
         task.listTasks()
     }
@@ -90,7 +97,14 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Read a task from the TODO LIST',
-    handler: function (argv){
+    builder: {
+        name:{
+            describe: 'Task name',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) => {
         console.log(chalk.blue('READING A TASK'))
         task.readTasks(argv.name)
     }

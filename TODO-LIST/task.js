@@ -2,12 +2,15 @@ const fs = require('fs')
 const chalk = require('chalk')
 const _ = require('lodash')
 
-const addTask = function(name, description, status){
+const addTask = (name, description, status) => {
+
     const tasks = loadAllTasks()
     
-    const duplicatedTask = tasks.find(function(task){
-        return task.name === name
-    })
+    // const duplicatedTask = tasks.find(function(task){
+    //     return task.name === name
+    // })
+
+    const duplicatedTask = tasks.find((task) => task.name === name)
 
     if(!duplicatedTask){
         const newTask = {
@@ -27,14 +30,14 @@ const addTask = function(name, description, status){
 
 }
 
-const removeTask = function(name){
+const removeTask = (name) => {
     const tasks = loadAllTasks()
 
     indiceParaRemover = findATask(name)
 
     if(indiceParaRemover != null){                      
         _.pullAt(tasks, indiceParaRemover)
-        fs.writeFileSync('tasks.json',JSON.stringify(tasks))
+        saveTask(tasks)
         
         const sucessMessage = chalk.red.bold('Task excluida!')
         console.log(sucessMessage)
@@ -44,7 +47,7 @@ const removeTask = function(name){
     }
 }
 
-const listTasks = function(){
+const listTasks = () => {
     const tasks = loadAllTasks()
     console.log(chalk.yellow.bold('Todas as Tasks salvas:'))
     for(var i = 0; i < _.size(tasks); i++){
@@ -52,7 +55,7 @@ const listTasks = function(){
     }
 }
 
-const readTasks = function(name){
+const readTasks = (name) => {
     const tasks = loadAllTasks()
     const taskindice = findATask(name)
     if(taskindice != null){
@@ -64,12 +67,12 @@ const readTasks = function(name){
     
 }
 
-const saveTask = function(task){
+const saveTask = (task) => {
     const tasksJSON = JSON.stringify(task)
     fs.writeFileSync('tasks.json', tasksJSON)
 }
 
-const loadAllTasks = function(){
+const loadAllTasks = () => {
     //ler todas as tarefas
     try {
         const tasksBuffer = fs.readFileSync('tasks.json')
@@ -79,7 +82,7 @@ const loadAllTasks = function(){
     }
 }
 
-const findATask = function(name){
+const findATask = (name) => {
     const tasks = loadAllTasks()
     for(var i = 0; i < _.size(tasks); i++){
         try {
