@@ -12,6 +12,8 @@
 
 // const _ = require('lodash')
 const chalk = require('chalk')
+const { castArray } = require('lodash')
+const { demandOption } = require('yargs')
 const yargs = require('yargs')
 
 // console.log(process.argv)
@@ -35,11 +37,38 @@ yargs.version('2.0.0')
 // list -> listar todas as tasks
 // read -> ler uma task
 
+
+// adicionar no builder description e status
+//descrição do novo campo
+//adicionar o tipo
+//imprimir no console.log
+
 yargs.command({
     command: 'add',
     describe: 'Add a new task into the TODO LIST',
-    handler: function (){
-        console.log(chalk.green('CREATING A NEW TASK'))
+    builder: {
+        name:{
+            describe: 'Task name',
+            demandOption: true,
+            type: 'string'
+        },    
+        descricao: {
+            describe: 'Task descripsion',
+            demandOption: true,
+            type: 'string'
+        },
+        status: {
+            describe: 'Task status',
+            default: 'BACKLOG',
+            type: 'string'
+        }
+    },
+    handler: function (argv){
+        console.log(chalk.green('CREATING A NEW TASK'));
+        console.log('info')
+        console.log(argv.name)
+        console.log(argv.descricao)
+        console.log(argv.status)
     }
 })
 yargs.command({
@@ -53,7 +82,7 @@ yargs.command({
     command: 'list',
     describe: 'List all tasks from the TODO LIST',
     handler: function (){
-        console.log(chalk.white('LISTING ALL PROJECT\'S TASK'))
+        console.log(chalk.yellow('LISTING OUT ALL PROJECT\'S TASK'))
     }
 })
 yargs.command({
@@ -65,6 +94,8 @@ yargs.command({
 })
 
 // console.log(process.argv)
-console.log(yargs.argv)
+// console.log(yargs.argv)
+
+yargs.parse()
 
 
