@@ -1,25 +1,10 @@
+const path = require('path')
 const express = require('express')
-const cotacao = require('./cotacoes')
 
 const app = express()
+const publicDirectoryPath = path.join(__dirname,'../public')
 
-//minhaapp.com.br
-//minhaapp.com.br/help
-//minhaapp.com.br/about
-
-app.get('', (req, res) =>{
-    res.send('<h1>Hello minha app</h1>')
-})
-
-app.get('/help', (req, res) => {
-    res.send('help page')
-})
-
-//definir a rota do about
-app.get('/about', (req, res) => {
-    res.send('about page')
-})
-//definir uma rota para o /cotacoes
+app.use(express.static(publicDirectoryPath))
 
 app.get('/cotacoes', (req, res) => {
     const pessoa = {

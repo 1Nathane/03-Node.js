@@ -1,0 +1,16 @@
+h1 {
+    color: #db5406;
+    background-color: rgb(26, 25, 25);
+    text-align: center;
+}
+
+body {
+    background-color: rgb(39, 39, 39);
+}
+
+img {
+    width: 600px;
+    margin: auto;
+	margin-top: 20px;
+	margin-left: 500px;
+}
