@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/style.css">
+        
+    </head>
+
+    <body>
+        {{> header}}
+        <div id="conteudo-pagina">
+            <h1>Procure por um ativo</h1>
+            <form>
+                <input type="text" placeholder="Código do ativo">
+                <button>Procurar</button>
+            </form>
+
+            <h3></h3>
+            <p id="close"></p>
+            <p id="open"></p>
+            <p id="high"></p>
+            <p id="low"></p>
+        </div>
+        {{> footer}}
+    </body>
+    <script src="./js/app.js"></script>
+</html>
