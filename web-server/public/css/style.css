@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    text-align: center;
 }
 h1 {
     font-size: 35px;
@@ -57,10 +58,10 @@ h3 {
     margin-right: auto;  */
 }
 #img-dinheiro {
-    position: relative; 
-    float: left;
-    width:20px;
-    margin: 0px 10px 0px 10px;
+    /* position: relative; 
+    float: left; */
+    width:70px;
+    margin: 20px;
 }
 
 input{
