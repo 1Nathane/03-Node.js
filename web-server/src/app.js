@@ -52,7 +52,7 @@ app.get('/cotacoes', (req, res) => {
     cotacoes.cotacao(symbol, (err, body) => {
         if(err){
             res.status(err.code).json({error: {
-                message: 'O ativo deve ser informado como query parameter',
+                message: err.message,
                 code: err.code
             }})                         
         }
