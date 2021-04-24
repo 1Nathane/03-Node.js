@@ -1,5 +1,4 @@
 
-
 const cotacoesForm = document.querySelector('form')
 const mensagemPrincipal = document.querySelector('h3')
 const close_ = document.querySelector('#close')
